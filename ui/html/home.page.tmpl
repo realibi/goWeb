@@ -1,8 +1,24 @@
-{{template "base"}}
-
+{{template "base" .}}
 {{define "title"}}Home{{end}}
-
 {{define "main"}}
-    hello lol
+<h2>Latest Snippets</h2>
+{{if .Snippets}}
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Created</th>
+        <th>Id</th>
+    </tr>
+    {{range .Snippets}}
+    <tr>
+        <td><a href='/snippet?id={{.Id}}'>{{.Title}}</a></td>
+        <!-- Use the new template function here -->
+        <td>{{humanDate .Created}}</td>
+        <td>#{{.Id}}</td>
+    </tr>
+    {{end}}
+</table>
+{{else}}
+<p>There's nothing to see here... yet!</p>
 {{end}}
-
+{{end}}
