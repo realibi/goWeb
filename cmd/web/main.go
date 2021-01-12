@@ -8,7 +8,7 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"realibi.com/models/postgresql"
+	"realibi.com/pkg/models/postgresql"
 )
 
 type application struct {

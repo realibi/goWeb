@@ -3,12 +3,14 @@ package main
 import (
 	"html/template"
 	"path/filepath"
-	"realibi.com/models"
+	"realibi.com/pkg/forms"
+	"realibi.com/pkg/models"
 	"time"
 )
 
-type templateData struct{
+type templateData struct {
 	CurrentYear int
+	Form *forms.Form
 	Snippet *models.Snippet
 	Snippets []*models.Snippet
 }
